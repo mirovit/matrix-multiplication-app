@@ -28,4 +28,4 @@ script:
   - vendor/bin/phpunit tests
 
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t clover
