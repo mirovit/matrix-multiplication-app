@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "783731c7-ad38-494d-afd3-b747bc0eff10",
+		"name": "Matrix App API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Multiplicate Matrix",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "matrixA",
+							"value": "1,2,3;3,2,1",
+							"type": "text"
+						},
+						{
+							"key": "matrixB",
+							"value": "1,1,2;3,5,8",
+							"type": "text"
+						},
+						{
+							"key": "columnDelimiter",
+							"value": "~",
+							"description": "Sets a different column delimiter, if needed",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "rowDelimiter",
+							"value": ";",
+							"description": "Sets a different row delimiter, if needed",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{endpoint}}/multiply",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"multiply"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "matrixA",
+									"value": "1,2,3;3,2,1",
+									"type": "text"
+								},
+								{
+									"key": "matrixB",
+									"value": "1,1,2;3,5,8;13,21,34",
+									"type": "text"
+								},
+								{
+									"key": "columnDelimiter",
+									"value": "~",
+									"description": "Sets a different column delimiter, if needed",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "rowDelimiter",
+									"value": ";",
+									"description": "Sets a different row delimiter, if needed",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{endpoint}}/multiply",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"multiply"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Dec 2020 08:43:58 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"matrix\": [\n            [\n                \"AT\",\n                \"BV\",\n                \"DP\"\n            ],\n            [\n                \"V\",\n                \"AH\",\n                \"BD\"\n            ]\n        ]\n    }\n}"
+				},
+				{
+					"name": "Validation error response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "matrixA",
+									"value": "1,2,3;3,2,1",
+									"type": "text"
+								},
+								{
+									"key": "matrixB",
+									"value": "1,1,2;3,5,8",
+									"type": "text"
+								},
+								{
+									"key": "columnDelimiter",
+									"value": "~",
+									"description": "Sets a different column delimiter, if needed",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "rowDelimiter",
+									"value": ";",
+									"description": "Sets a different row delimiter, if needed",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{endpoint}}/multiply",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"multiply"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Dec 2020 09:02:54 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"error_code\": \"validation-error\",\n    \"errors\": [\n        \"Matrix B should have 3 rows to match the Matrix A columns. Matrix B contains 2 rows.\"\n    ]\n}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}

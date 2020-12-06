@@ -18,6 +18,9 @@ Execute `php ./vendor/bin/phpunit` from the project root.
 
 Postman collection and environment files are located in the project root folder. You can use those to test your API.
 
+- Matrix App API.postman_collection.json
+- Matrix App API ENV.postman_environment.json
+
 ## Available API methods
 
 - POST /multiply
