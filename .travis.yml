@@ -8,7 +8,6 @@ sudo: false
 env:
   global:
     - CC_TEST_REPORTER_ID=111bc4457537ba5308b2c1c02be21db606b610ec096a91417a6ede2b695ea738
-    - XDEBUG_MODE=coverage
 
 cache:
   directories:
@@ -24,9 +23,10 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
+  - phpenv config-add code-coverage.ini
 
 script:
-  - XDEBUG_MODE=coverage ./vendor/bin/phpunit
+  - ./vendor/bin/phpunit
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t clover
