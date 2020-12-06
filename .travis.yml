@@ -23,7 +23,7 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
-  - phpenv config-add code-coverage.ini
+#  - phpenv config-add code-coverage.ini
 
 script:
   - ./vendor/bin/phpunit
