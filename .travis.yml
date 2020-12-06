@@ -1,0 +1,31 @@
+language: php
+
+php:
+  - 8.0
+
+sudo: false
+
+env:
+  global:
+    - CC_TEST_REPORTER_ID=111bc4457537ba5308b2c1c02be21db606b610ec096a91417a6ede2b695ea738
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+before_install:
+  - composer selfupdate
+
+install:
+  - composer update --no-interaction --prefer-lowest
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+script:
+  - vendor/bin/phpunit tests
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
