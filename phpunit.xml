@@ -6,6 +6,9 @@
         <report>
             <clover outputFile="build/logs/clover.xml"/>
         </report>
+        <include>
+            <directory suffix=".php">./app/Services</directory>
+        </include>
     </coverage>
     <testsuites>
         <testsuite name="Unit Tests">
@@ -20,5 +23,4 @@
         <env name="CACHE_DRIVER" value="array"/>
         <env name="QUEUE_CONNECTION" value="sync"/>
     </php>
-    <logging/>
 </phpunit>
