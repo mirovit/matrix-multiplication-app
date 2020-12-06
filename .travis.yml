@@ -26,7 +26,7 @@ before_script:
   - phpenv config-add code-coverage.ini
 
 script:
-  - vendor/bin/phpunit
+  - php ./vendor/bin/phpunit
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t clover
