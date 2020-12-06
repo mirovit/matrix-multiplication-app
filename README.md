@@ -1,5 +1,9 @@
 # Matrix Multiplication App
 
+[![Build Status](https://travis-ci.org/mirovit/matrix-multiplication-app.svg?branch=master)](https://travis-ci.org/mirovit/matrix-multiplication-app)
+[![Maintainability](https://api.codeclimate.com/v1/badges/03b388c5ded9568a4797/maintainability)](https://codeclimate.com/github/mirovit/matrix-multiplication-app/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/03b388c5ded9568a4797/test_coverage)](https://codeclimate.com/github/mirovit/matrix-multiplication-app/test_coverage)
+
 ## Requirements
 
 The only requirement is PHP 8.
